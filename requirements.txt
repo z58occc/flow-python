@@ -1,0 +1,9 @@
+filterpy
+Flask
+imutils
+matplotlib
+numba
+numpy
+opencv_python
+Requests
+scipy
