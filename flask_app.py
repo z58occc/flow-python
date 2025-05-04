@@ -7,10 +7,14 @@ import io
 import os
 import matplotlib
 from count_footfall.process import process_video
+from flask_cors import CORS
+# test
+
 
 matplotlib.use('Agg')
 
 app = Flask(__name__)
+CORS(app)
 
 FILE_NAME = 'data/footfall_data.json'
 # 影片上傳資料夾
@@ -243,7 +247,7 @@ def upload_video():
     return jsonify({
         "message": "Video uploaded successfully",
         "file_path": filepath,
-        "footfall": footfall_count
+        "footfall":footfall_count
     }), 201
 
 if __name__ == '__main__':
