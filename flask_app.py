@@ -15,11 +15,11 @@ matplotlib.use('Agg')
 app = Flask(__name__)
 CORS(app)
 
-FILE_NAME = 'data/footfall_data.json'
+FILE_NAME = '/tmp/footfall_data.json'
 # 影片上傳資料夾
 VIDEO_UPLOAD_FOLDER = '/tmp/videos'
 # 人流資料上傳資料夾
-UPLOAD_FOLDER = './uploads'
+UPLOAD_FOLDER = '/tmp/uploads'
 
 # 從JSON讀取人流量數據的函式
 def read_data(filename=FILE_NAME):
