@@ -236,7 +236,8 @@ def upload_video():
     print("Processing video...")
     try:
         # process_video 回傳計算到的人數
-        footfall_count = process_video(filepath)
+        # footfall_count = process_video(filepath)
+        footfall_count = 0
     except Exception as e:
         # 當處理影片失敗時，回傳錯誤訊息和 500 狀態碼
         print("Error processing video:", str(e))
