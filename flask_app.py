@@ -8,7 +8,6 @@ import os
 import matplotlib
 from count_footfall.process import process_video
 from flask_cors import CORS
-# test
 
 
 matplotlib.use('Agg')
@@ -18,7 +17,7 @@ CORS(app)
 
 FILE_NAME = 'data/footfall_data.json'
 # 影片上傳資料夾
-VIDEO_UPLOAD_FOLDER = './clients_video'
+VIDEO_UPLOAD_FOLDER = '/tmp/videos'
 # 人流資料上傳資料夾
 UPLOAD_FOLDER = './uploads'
 
