@@ -2,7 +2,7 @@ import os
 import urllib.request
 
 weights_path = 'count_footfall/yolo-coco/yolov3.weights'
-url = 'https://pjreddie.com/media/files/yolov3.weights'
+url = 'https://drive.google.com/file/d/1yHvatE7V4rJJuwvuDtMzKnMPDn1WU_jY/view?usp=drive_link'
 
 if not os.path.exists(weights_path):
     print("Downloading yolov3.weights...")
