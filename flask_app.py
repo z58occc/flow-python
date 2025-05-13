@@ -1,3 +1,14 @@
+import os
+import urllib.request
+
+weights_path = 'count_footfall/yolo-coco/yolov3.weights'
+url = 'https://pjreddie.com/media/files/yolov3.weights'
+
+if not os.path.exists(weights_path):
+    print("Downloading yolov3.weights...")
+    urllib.request.urlretrieve(url, weights_path)
+    print("Download complete.")
+    
 from flask import Flask, render_template, jsonify, request, send_file
 import json
 import calendar as cal
