@@ -8,7 +8,7 @@ if not os.path.exists(weights_path):
     print("Downloading yolov3.weights...")
     urllib.request.urlretrieve(url, weights_path)
     print("Download complete.")
-    
+
 from flask import Flask, render_template, jsonify, request, send_file
 import json
 import calendar as cal
@@ -26,13 +26,22 @@ matplotlib.use('Agg')
 app = Flask(__name__)
 CORS(app)
 
+
+
 FILE_NAME = '/tmp/footfall_data.json'
 # 影片上傳資料夾
 VIDEO_UPLOAD_FOLDER = '/tmp/videos'
 # 人流資料上傳資料夾
 UPLOAD_FOLDER = '/tmp/uploads'
 
-# 從JSON讀取人流量數據的函式
+# FILE_NAME = 'data/footfall_data.json'
+# # 影片上傳資料夾
+# VIDEO_UPLOAD_FOLDER = './clients_video'
+# # 人流資料上傳資料夾
+# UPLOAD_FOLDER = './uploads'
+# # 從JSON讀取人流量數據的函式
+
+
 def read_data(filename=FILE_NAME):
     try:
         with open(filename, 'r') as jsonfile:
