@@ -2,12 +2,18 @@ import os
 import urllib.request
 
 weights_path = 'count_footfall/yolo-coco/yolov3.weights'
-url = 'https://drive.google.com/file/d/1yHvatE7V4rJJuwvuDtMzKnMPDn1WU_jY/view?usp=drive_link'
+url = 'https://pjreddie.com/media/files/yolov3.weights'
 
 if not os.path.exists(weights_path):
     print("Downloading yolov3.weights...")
-    urllib.request.urlretrieve(url, weights_path)
+    req = urllib.request.Request(
+        url, 
+        headers={'User-Agent': 'Mozilla/5.0'}  # 模擬瀏覽器
+    )
+    with urllib.request.urlopen(req) as response, open(weights_path, 'wb') as out_file:
+        out_file.write(response.read())
     print("Download complete.")
+
 
 from flask import Flask, render_template, jsonify, request, send_file
 import json
