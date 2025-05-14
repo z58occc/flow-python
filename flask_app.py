@@ -2,7 +2,7 @@ import os
 import urllib.request
 
 weights_path = '/tmp/yolov3.weights'
-url = 'https://drive.google.com/file/d/1qiypIk6dApJBkYUrSOP4ztruiGqgTJHm/view?usp=drive_link'
+url = 'https://github.com/z58occc/tic-tac-toe/releases/download/yolo/yolov3.weights'
 
 if not os.path.exists(weights_path):
     print("Downloading yolov3.weights...")
