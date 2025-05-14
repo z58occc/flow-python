@@ -1,7 +1,7 @@
 import os
 import urllib.request
 
-weights_path = 'count_footfall/yolo-coco/yolov3.weights'
+weights_path = '/tmp/yolov3.weights'
 url = 'https://pjreddie.com/media/files/yolov3.weights'
 
 if not os.path.exists(weights_path):
