@@ -14,6 +14,13 @@ if not os.path.exists(weights_path):
         out_file.write(response.read())
     print("Download complete.")
 
+weights_path = '/tmp/yolov3.weights'
+
+if os.path.exists(weights_path):
+    print("✅ weights 檔案已存在：", weights_path)
+    print("📦 檔案大小：", os.path.getsize(weights_path), "bytes")
+else:
+    print("❌ weights 檔案不存在於：", weights_path)
 
 from flask import Flask, render_template, jsonify, request, send_file
 import json
