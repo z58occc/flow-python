@@ -1,7 +1,6 @@
-# 使用官方 Python 映像
-FROM python:3.10-slim
+FROM python:3.10
 
-# 安裝系統層級依賴 (含 ffmpeg + opencv 需要的庫)
+# 安裝 ffmpeg（含 libx264）、OpenCV 所需的依賴
 RUN apt-get update && \
     apt-get install -y \
     ffmpeg \
@@ -10,17 +9,17 @@ RUN apt-get update && \
     libgl1 \
     && apt-get clean
 
-# 建立工作目錄
+# 建立工作資料夾
 WORKDIR /app
 
-# 複製所有檔案進容器
+# 複製程式碼進容器
 COPY . .
 
 # 安裝 Python 套件
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 開放 Flask 預設的 5000 port
+# 暴露 port（Flask 用）
 EXPOSE 5000
 
-# 啟動指令
+# 執行應用
 CMD ["python", "flask_app.py"]
