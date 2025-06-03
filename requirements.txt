@@ -8,4 +8,5 @@ opencv_python
 Requests
 scipy
 gunicorn
+flask-cors
 
