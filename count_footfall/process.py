@@ -7,8 +7,8 @@ import cv2
 import os
 import glob
 import pdb
-from sort import Sort
-# from count_footfall.sort import *
+# from sort import Sort
+from count_footfall.sort import *
 
 def process_video(video_path):
 	os.makedirs("output", exist_ok=True)
@@ -42,7 +42,7 @@ def process_video(video_path):
 	args = {
     "input": video_path,
     "output": "output/result.mp4",
-    "yolo": "yolo-coco",
+    "yolo": "count_footfall/yolo-coco",
     "confidence": 0.5,
     "threshold": 0.3
 		}
