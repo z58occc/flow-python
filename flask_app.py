@@ -260,8 +260,14 @@ def upload_video():
 # 提供下載影片的 endpoint
 @app.route('/api/download_video/<path:filename>')
 def download_video(filename):
-    full_path = filename
+    base_dir = 'api/download_video/output'
+    full_path = os.path.join(base_dir, filename)
+    # full_path = filename
     print("Full path:", full_path)
+    
+    if not os.path.exists(full_path):
+        abort(404, description="File not found")
+
     
     return send_file(
         full_path,
