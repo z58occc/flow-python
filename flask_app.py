@@ -260,6 +260,8 @@ def upload_video():
 # 提供下載影片的 endpoint
 @app.route('/api/download_video/<path:filename>')
 def download_video(filename):
+    print("==> Entered download_video route")   # 直接看有沒有進入
+    
     base_dir = 'api/download_video/output'
     full_path = os.path.join(base_dir, filename)
     # full_path = filename
