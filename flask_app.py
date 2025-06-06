@@ -265,6 +265,12 @@ def download_video(filename):
     # full_path = filename
     print("Full path:", full_path)
 
+    # 這裡加上 debug
+    try:
+        print("Files in output dir:", os.listdir(base_dir))
+    except Exception as e:
+        print("Error listing files in output dir:", str(e))
+
     if not os.path.exists(full_path):
         abort(404, description="File not found")
 
